@@ -44,6 +44,24 @@ This configuration makes extensive use of the `mini.nvim` plugin suite, providin
 - Git integration with `mini.git`
 - And many more mini modules for a cohesive experience
 
+### Language Server Protocol (LSP)
+Comprehensive LSP support for multiple languages:
+- **Nix** (nixd)
+- **Lua** (lua-language-server)
+- **TypeScript/JavaScript** (tsserver)
+- **Python** (pyright)
+- **Rust** (rust-analyzer)
+- **Go** (gopls)
+- **HTML/CSS/JSON** (vscode-langservers-extracted)
+- **YAML** (yaml-language-server)
+- **Markdown** (marksman)
+
+### Git Integration
+- **Gitsigns**: Visual git diff indicators
+- **Mini.git**: Enhanced git operations
+- **Git navigation**: Jump between hunks with ]g and [g
+- **Git commands**: Stage, reset, preview hunks
+
 ### AI-Powered Development
 - **GitHub Copilot**: Intelligent code suggestions
 - **Tab Completion**: AI-powered completions (Ctrl+J to accept)
@@ -58,6 +76,16 @@ This configuration makes extensive use of the `mini.nvim` plugin suite, providin
 - `<leader>e` - File explorer (Mini.files)
 - `<leader>w` - Save file
 - `<leader>q` - Quit
+
+#### Git Controls
+- `<leader>gs` - Toggle git signs / Git status
+- `<leader>gb` - Git blame current line
+- `<leader>gd` - Git diff current file
+- `<leader>gr` - Reset git hunk
+- `<leader>gR` - Reset entire buffer
+- `<leader>gp` - Preview git hunk
+- `]g` - Next git hunk
+- `[g` - Previous git hunk
 
 #### Copilot Controls
 - `<C-j>` - Accept Copilot suggestion (Insert mode)
@@ -79,6 +107,8 @@ config/
 ├── vim.nix        # Basic vim settings
 ├── theme.nix      # Rosé Pine theme configuration
 ├── plugins.nix    # Mini.nvim and other plugins
+├── lsp.nix        # Language Server Protocol configuration
+├── git.nix        # Git integration with mini.git and gitsigns
 ├── ai.nix         # AI/Copilot configuration
 └── keybinds.nix   # Custom keybindings
 ```

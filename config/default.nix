@@ -6,6 +6,8 @@
     ./theme.nix
     ./plugins.nix
     ./ai.nix
+    ./lsp.nix
+    ./git.nix
     ./keybinds.nix
   ];
 }

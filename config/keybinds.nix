@@ -112,6 +112,15 @@
             h = "Help tags",
             t = "Open telescope",
           },
+          g = {
+            name = "Git",
+            s = "Toggle signs / Status",
+            b = "Blame line",
+            d = "Diff file", 
+            r = "Reset hunk",
+            R = "Reset buffer",
+            p = "Preview hunk",
+          },
           b = {
             name = "Buffer",
             d = "Delete buffer",
@@ -127,6 +136,8 @@
             h = "No highlight",
           },
         },
+        ["]g"] = "Next git hunk",
+        ["[g"] = "Previous git hunk",
       })
       
       -- Mini.clue configuration for additional hints

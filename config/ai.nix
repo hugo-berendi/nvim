@@ -15,7 +15,7 @@
       friendly-snippets
     ];
     
-    # Enhanced completion with AI integration
+    # Enhanced completion configuration
     autocomplete = {
       nvim-cmp = {
         enable = true;
@@ -24,27 +24,6 @@
           buffer = "[Buffer]";
           path = "[Path]";
           luasnip = "[Snippet]";
-          cmp_tabnine = "[TabNine]";
-          codeium = "[Codeium]";
-        };
-        formatting = {
-          format = ''
-            function(entry, vim_item)
-              -- Fancy icons and a name of kind
-              vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
-              -- Source
-              vim_item.menu = ({
-                buffer = "[Buffer]",
-                nvim_lsp = "[LSP]",
-                luasnip = "[LuaSnip]",
-                nvim_lua = "[Lua]",
-                latex_symbols = "[LaTeX]",
-                codeium = "[Codeium]",
-                cmp_tabnine = "[TabNine]",
-              })[entry.source.name]
-              return vim_item
-            end
-          '';
         };
         mappings = {
           complete = "C-Space";
