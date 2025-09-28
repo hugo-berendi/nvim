@@ -41,10 +41,13 @@
         # File explorer (mini.files)
         "<leader>e" = { action = ":lua MiniFiles.open()<CR>"; desc = "Open file explorer"; };
         
-        # Copilot controls
-        "<leader>cs" = { action = ":Copilot status<CR>"; desc = "Copilot status"; };
-        "<leader>ce" = { action = ":Copilot enable<CR>"; desc = "Enable Copilot"; };
-        "<leader>cd" = { action = ":Copilot disable<CR>"; desc = "Disable Copilot"; };
+        # Avante AI controls
+        "<leader>aa" = { action = ":AvanteAsk<CR>"; desc = "Ask Avante AI"; };
+        "<leader>ae" = { action = ":AvanteEdit<CR>"; desc = "Edit with Avante AI"; };
+        "<leader>ac" = { action = ":AvanteChat<CR>"; desc = "Open Avante chat"; };
+        "<leader>at" = { action = ":AvanteToggle<CR>"; desc = "Toggle Avante panel"; };
+        "<leader>af" = { action = ":AvanteFocus<CR>"; desc = "Focus Avante panel"; };
+        "<leader>ar" = { action = ":AvanteRefresh<CR>"; desc = "Refresh Avante"; };
       };
       
       # Visual mode mappings
@@ -57,8 +60,9 @@
         "<A-j>" = { action = ":m '>+1<CR>gv=gv"; desc = "Move selection down"; };
         "<A-k>" = { action = ":m '<-2<CR>gv=gv"; desc = "Move selection up"; };
         
-        # AI/Copilot on selection  
-        "<leader>cs" = { action = ":Copilot status<CR>"; desc = "Copilot status"; };
+        # Avante AI on selection  
+        "<leader>aa" = { action = ":AvanteAsk<CR>"; desc = "Ask Avante AI about selection"; };
+        "<leader>ae" = { action = ":AvanteEdit<CR>"; desc = "Edit selection with Avante AI"; };
       };
       
       # Insert mode mappings
@@ -98,11 +102,18 @@
       local wk = require("which-key")
       wk.register({
         ["<leader>"] = {
-          c = {
-            name = "Copilot",
-            s = "Status",
-            e = "Enable", 
-            d = "Disable",
+          a = {
+            name = "Avante AI",
+            a = "Ask AI",
+            e = "Edit with AI", 
+            c = "Chat",
+            t = "Toggle panel",
+            f = "Focus panel",
+            r = "Refresh",
+            g = "Generate tests",
+            d = "Generate docs",
+            o = "Optimize code",
+            x = "Explain code",
           },
           f = {
             name = "Find/Telescope",

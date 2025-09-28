@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.0] - 2024-12-28
+
+### Changed
+- **AI System Migration**: Replaced GitHub Copilot with Avante.nvim for local AI chat using Ollama
+- **Privacy Enhancement**: AI now runs completely locally through Ollama - no external API calls
+- **Enhanced AI Interaction**: Added interactive chat interface with dedicated panel
+- **New Keybindings**: Updated AI keybindings to use `<leader>a*` prefix for Avante commands
+
+### Added
+- **Avante.nvim Integration**: Full AI chat interface with Ollama backend
+- **Local AI Models**: Support for CodeLlama, Llama2, Mistral, and other Ollama models
+- **AI Chat Panel**: Dedicated sidebar for AI conversations and code assistance
+- **Enhanced AI Commands**: Generate tests, documentation, code explanations, and optimizations
+- **Ollama Integration**: Automatic Ollama inclusion in development shell
+
+### Removed
+- GitHub Copilot integration (replaced by Avante.nvim + Ollama)
+- External AI API dependencies
+
 ## [1.0.0] - 2024-12-28
 
 ### Added

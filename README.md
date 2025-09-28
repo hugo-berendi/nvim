@@ -63,9 +63,10 @@ Comprehensive LSP support for multiple languages:
 - **Git commands**: Stage, reset, preview hunks
 
 ### AI-Powered Development
-- **GitHub Copilot**: Intelligent code suggestions
-- **Tab Completion**: AI-powered completions (Ctrl+J to accept)
-- **Smart Navigation**: Jump between suggestions with Ctrl+] and Ctrl+[
+- **Avante.nvim with Ollama**: Local AI chat and code assistance using Ollama
+- **Smart Conversations**: Interactive AI chat for code explanations, generation, and optimization  
+- **Local Privacy**: AI runs locally through Ollama - no data sent to external services
+- **Code Generation**: AI-powered code completion and suggestions
 
 ### Key Bindings
 
@@ -87,13 +88,20 @@ Comprehensive LSP support for multiple languages:
 - `]g` - Next git hunk
 - `[g` - Previous git hunk
 
-#### Copilot Controls
-- `<C-j>` - Accept Copilot suggestion (Insert mode)
-- `<C-]>` - Next suggestion (Insert mode)
-- `<C-[>` - Previous suggestion (Insert mode)
-- `<leader>cs` - Copilot status
-- `<leader>ce` - Enable Copilot
-- `<leader>cd` - Disable Copilot
+#### Avante AI Controls
+- `<leader>aa` - Ask Avante AI (works in normal and visual mode)
+- `<leader>ae` - Edit with Avante AI (works in normal and visual mode)
+- `<leader>ac` - Open Avante chat panel
+- `<leader>at` - Toggle Avante panel
+- `<leader>af` - Focus Avante panel
+- `<leader>ar` - Refresh Avante
+- `<leader>ag` - Generate unit tests with AI
+- `<leader>ad` - Generate documentation with AI
+- `<leader>ao` - Optimize code with AI
+- `<leader>ax` - Explain code with AI
+- `<Alt-l>` - Accept AI suggestion (Insert mode)
+- `<Alt-]>` - Next AI suggestion (Insert mode)
+- `<Alt-[>` - Previous AI suggestion (Insert mode)
 
 #### Window Navigation
 - `<C-h/j/k/l>` - Move between windows
@@ -125,7 +133,35 @@ To customize this configuration:
 ## Requirements
 
 - Nix with flakes enabled
-- For Copilot: GitHub account and Copilot subscription
+- For AI features: Ollama running locally with a code model (e.g., codellama:7b-instruct)
+
+## AI Setup
+
+To use the AI features powered by Avante.nvim and Ollama:
+
+1. **Install and start Ollama** (if not using the development shell):
+   ```bash
+   # Ollama is included in the development shell
+   nix develop
+   
+   # Start Ollama server
+   ollama serve
+   ```
+
+2. **Pull an AI model**:
+   ```bash
+   # Pull the default model (CodeLlama 7B Instruct)
+   ollama pull codellama:7b-instruct
+   
+   # Or try other models:
+   # ollama pull llama2:7b
+   # ollama pull mistral:7b
+   ```
+
+3. **Use AI in neovim**:
+   - `<leader>aa` - Ask AI questions about code
+   - `<leader>ae` - Edit code with AI assistance
+   - `<leader>ac` - Open AI chat panel
 
 ## License
 

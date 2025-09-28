@@ -38,11 +38,20 @@
             stylua
             nixd
             nixfmt-rfc-style
+            
+            # AI tools
+            ollama  # Required for Avante.nvim AI chat
+            curl    # Required for Ollama API calls
           ];
           
           shellHook = ''
-            echo "Hugo's Neovim development environment"
+            echo "Hugo's Neovim development environment with Avante AI"
             echo "Use 'nix run .' to run neovim with the configuration"
+            echo ""
+            echo "AI Setup:"
+            echo "1. Start Ollama server: ollama serve"
+            echo "2. Pull AI model: ollama pull codellama:7b-instruct"
+            echo "3. Open neovim and use <leader>aa to ask AI questions"
           '';
         };
         
